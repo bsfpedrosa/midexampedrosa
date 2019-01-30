@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  This is the Detail page
+{% endblock %}
+
+{% block body %}
+  Candidate: {{ candidate.lastname }},  {{ candidate.firstname }}<br/>
+  Position: {{ candidate.position }} <br/>
+  Vote Count: {{candidate.<related_name>.all}} <br/>
+  Platform: {{ candidate.platform}} <br/>
+  <a href="{% url 'votes:index' %}">Home</a><br/>
+  <a href="{% url 'votes:update' %}">Update</a><br/>
+  <a href="{% url 'votes:vote' %}">Vote</a><br/>
+  {% endfor %}
+{% endblock %}

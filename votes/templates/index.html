@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  this is the index page
+{% endblock %}
+
+{% block body %}
+  <ol>
+  {% for question in questions %}
+  <li>
+    <a href="{% url 'votes:detail' candidate.id %}">
+      Candidate: {{candidate.lastname}}, {{candidate.firstname}}<br/>
+      Position: {{candidate.position}}
+      Vote Count: {{candidate.<related_name>.all}}
+      Platform: {{candidate.platform}}
+  </li>
+  {% endfor %}
+  <a href="{% url 'votes:Ccreate' %}">Add Candidate</a><br/>
+  <a href="{% url 'votes:Pcreate' %}">Add Position</a><br/>
+  </ol>
+{% endblock %}
